@@ -1,6 +1,5 @@
 use state_service::{StateService, Subscription};
 
-//
 #[derive(Debug, Clone, PartialEq, PartialOrd)]
 struct ToDoItem {
     pub text: String,
@@ -8,11 +7,15 @@ struct ToDoItem {
 }
 
 //
+// Define your state struct
+//
 #[derive(Debug, Clone, PartialEq, PartialOrd)]
 struct ToDoListState {
     pub list: Vec<ToDoItem>,
 }
 
+//
+// Implement your state action (function)
 //
 impl ToDoListState {
     fn add_item(&mut self, text: String) {
@@ -23,6 +26,9 @@ impl ToDoListState {
     }
 }
 
+
+//
+//
 //
 fn main() {
     let init_state = ToDoListState { list: vec!(ToDoItem {
